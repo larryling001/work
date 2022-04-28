@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 设置页面文字编码 -->
+  <meta charset="UTF-8" />
+  <!-- 设置edge兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- 设置页面适配属性 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 引入布局css -->
+  <link rel="stylesheet" href="./css/index.css" />
+  <!-- 引入字体css -->
+  <link rel="stylesheet" href="./css/iconfont.css" />
+  <!-- 引入动画样式库 -->
+  <link rel="stylesheet" href="./css/animista.css" />
+  <!-- 设置页面标题 -->
+  <title>首页</title>
+</head>
+
+<body>
+  <!-- 页面主容器 -->
+  <div class="home-page">
+    <!-- 标题 -->
+    <div class="header">
+      <span id="header-text" class="slide-bottom"></span>
+    </div>
+    <!-- 段落-这里采用flex弹性布局实现左右自适应 -->
+    <div class="content">
+      <!-- 左边段落 -->
+      <div class="paragraph slide-right" id="paragraph">
+        <!-- 头部黑色文字 -->
+        <span id="paragraph-header-text"></span>
+        <!-- 白色文字段落 -->
+        <p id="paragraph-p-text"></p>
+      </div>
+      <!-- 右边图片 -->
+      <div class="img-box slide-left" id="img-box">
+        <img id="image" class="img" src="" alt="" />
+      </div>
+    </div>
+    <!-- 尾部文字 -->
+    <div class="footer slide-top" id="footer-text"></div>
+    <!-- 按钮 -->
+    <div class="btn">
+      <!-- 后退 -->
+      <button class="before" id="before-btn">
+        <i class="iconfont icon-jiantou_xiangzuo_o"></i>
+        <span>Before</span>
+      </button>
+      <!-- 前进 -->
+      <button class="next" id="next-btn">
+        <span>Next</span>
+        <i class="iconfont icon-jiantou_xiangyou_o"></i>
+      </button>
+    </div>
+    <!-- 勾选框 -->
+    <div class="checkbox">
+      <input type="checkbox" id="check-me">
+      <label for="check-me" class="label">
+        Music
+        <!-- svg实现对勾 -->
+        <svg viewBox="-9 -9 43 35.191" width="30" height="20">
+          <path id="check-icon" d=" M 0 9 Q 8 17 8 17 Q 8 17 25 0" fill="none" stroke-width="6" stroke="rgb(0,0,0)"
+            stroke-linecap="round" />
+        </svg>
+      </label>
+    </div>
+  </div>
+  <!-- 媒体播放器 -->
+  <audio id="audio" src="./static/music.mp3" controls="controls" loop="true" hidden="true"></audio>
+  <!-- 引入js -->
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

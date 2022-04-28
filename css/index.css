@@ -1,0 +1,238 @@
+@font-face {
+    /* 声明字体 */
+    font-family: 'SourceHanSansSC-regular';
+    src: url('../font/sourcehansanssc-regular.ttf');
+}
+
+p {
+    /* 去除P标签默认边距 */
+    margin: 0;
+}
+
+html,
+body {
+    /* 去除页面默认边距*/
+    padding: 0;
+    margin: 0;
+    /* 设置页面默认宽高 */
+    width: 100%;
+    height: 100%;
+    /* 设置字体 */
+    font-family: 'SourceHanSansSC-regular';
+}
+
+.home-page {
+    /* 设置主容器宽高 */
+    height: 100%;
+    width: 100%;
+    /* 设置背景图片 */
+    background: url('../static/back.jpg') no-repeat;
+    /* 设置背景图片尺寸使其自适应*/
+    background-size: cover;
+    overflow-x: hidden;
+}
+/* 从上到下划入动画 */
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/* 从左到右划入动画 */
+.slide-right {
+    -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/* 从右到左划入动画 */
+.slide-left {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/* 从下到上划入动画 */
+.slide-top {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.header {
+    width: 100%;
+    height: 87px;
+    /* 文字居中 */
+    text-align: center;
+
+}
+
+.header span {
+    /* 设置文字大小 */
+    font-size: 58px;
+    /* 设置文字加粗 */
+    font-weight: bolder;
+    /* 设置文字阴影 */
+    text-shadow: 2px 2px 4px #000;
+
+    display: block;
+}
+
+.content {
+    /* flex弹性布局 */
+    display: flex;
+    padding-top: 40px;
+    min-height: 600px;
+}
+
+.content .paragraph {
+
+    font-size: 32px;
+}
+
+.content .img-box {
+
+    font-size: 32px;
+}
+
+.content .paragraph,
+.img-box {
+    /* 左右各50%弹性布局 */
+    flex:50% 1 1;
+    text-align: center;
+}
+
+.content .img-box .img {
+    max-height: 560px;
+}
+
+.content .paragraph span,
+p {
+    line-height: 60px;
+}
+
+.content .paragraph p {
+    color: #fff;
+}
+
+.footer {
+
+    text-align: center;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.btn {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.btn .before {
+    display: none;
+}
+
+.btn button {
+    width: 145px;
+    height: 58px;
+    border: none;
+    background-color: #A4ADB3;
+    color: #fff;
+    /* 鼠标悬停效果 */
+    cursor: pointer;
+    /* 元素圆角 */
+    border-radius: 4px;
+
+}
+
+.btn button:hover {
+    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.btn button:last-child {
+    margin-left: 20px;
+}
+
+.btn button span,
+.iconfont {
+    font-size: 24px !important;
+}
+
+.btn button .iconfont {
+    font-weight: bold;
+}
+.checkbox{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.checkbox input{
+    display: none;
+}
+
+.checkbox input+.label {
+    position: relative;
+    padding-left: 1.7em;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+.checkbox input+.label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    border: 3px solid #ffffff;
+    border-radius: 0.1em;
+}
+
+.checkbox input+.label::after {
+    content: '';
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    width: 1.1em;
+    height: 1em;
+    transform: scale(0);
+    background-color: #ffffff;
+    border-radius: 0.02em;
+    transition: all 0.2s linear;
+    opacity: 0;
+}
+
+.checkbox input+.label svg {
+    position: absolute;
+    top: 0.2em;
+    left: 0.12em;
+    z-index: 1;
+}
+
+.checkbox input+.label #check-icon {
+    /* svg线条颜色 */
+    stroke: #00acc1;
+    /* svg线条属性 */
+    stroke-dasharray: 36;
+    stroke-dashoffset: 36;
+}
+
+.checkbox input:checked+.label::after {
+    transform: scale(1);
+    /* 透明度 */
+    opacity: 1;
+}
+
+.checkbox input:checked+.label #check-icon {
+    /* 动画相关配置 */
+    animation-name: check-animation;
+    animation-duration: 0.2s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1, 0.12, 0.96, 0.62);
+}
+
+@keyframes check-animation {
+    0% {
+        stroke-dashoffset: 36;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
